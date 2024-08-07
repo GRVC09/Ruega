@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Orden para el TIEX</h1>
+<h2>{{today}}</h2>
+<ol>
+{% for task in tasks %}
+        {% if task.anotado %}
+        <li>          
+            <p>{{task.user.first_name}} {{task.user.last_name}}. Días anotados
+                {{task.diasanotados}} Total de TIEX {{task.tiex}} <p>
+        </li>
+        {% endif %}
+{% endfor %}
+</ol>
+
+
+{% endblock content %}

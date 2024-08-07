@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Lista de trabajadores</h1>
+<h2>{{today}}</h2>
+<ol>
+{% for task in tasks %}
+        {% if task.anotado %}
+        {% endif %}
+        <li>
+                 <a href="{% url 'task_detail' task.id %}">   
+            <p>{{task.user.first_name}} {{task.user.last_name}} Fecha de fin de contrato 
+                {{task.datecontra.month}}/{{task.datecontra.day}}/{{task.datecontra.year}}. Días anotados
+                {{task.diasanotados}} Total de TIEX {{task.tiex}} <p>
+        </li>
+        
+{% endfor %}
+</ol>
+
+
+{% endblock content %}
